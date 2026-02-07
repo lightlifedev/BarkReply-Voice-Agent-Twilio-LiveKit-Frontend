@@ -35,16 +35,17 @@ export default function Dashboard() {
       setLoading(false);
       return;
     }
+    const client = supabase;
 
     const load = async () => {
       try {
         const [callsRes, requestsRes] = await Promise.all([
-          supabase
+          client
             .from('calls')
             .select('id, caller_phone, livekit_room_name, status, started_at')
             .order('started_at', { ascending: false })
             .limit(50),
-          supabase
+          client
             .from('requests')
             .select('id, call_id, type, outcome, owner_name, owner_phone, pet_name, next_action, created_at')
             .order('created_at', { ascending: false })

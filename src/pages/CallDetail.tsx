@@ -49,21 +49,22 @@ export default function CallDetail() {
       setLoading(false);
       return;
     }
+    const client = supabase;
 
     const load = async () => {
       try {
         const [callRes, turnsRes, requestsRes] = await Promise.all([
-          supabase
+          client
             .from('calls')
             .select('id, caller_phone, livekit_room_name, status, started_at, ended_at')
             .eq('id', callId)
             .single(),
-          supabase
+          client
             .from('conversation_turns')
             .select('id, role, content, created_at')
             .eq('call_id', callId)
             .order('created_at', { ascending: true }),
-          supabase
+          client
             .from('requests')
             .select('id, type, outcome, pet_name, pet_breed, service_requested, preferred_date, owner_name, owner_phone, notes, next_action, created_at')
             .eq('call_id', callId)
