@@ -136,7 +136,7 @@ export default function VoiceTest() {
 
       <h1 className="text-2xl font-semibold text-slate-800">Voice agent test</h1>
       <p className="text-slate-600 max-w-xl">
-        Connect to a LiveKit room and talk to the groomer voice agent. Make sure the backend is running and <code className="rounded bg-slate-100 px-1 text-sm">pnpm run agent:dev</code> is active so the agent can join.
+        Connect to a LiveKit room and talk to the groomer voice agent. The agent is dispatched when you start the call. Ensure the backend is running and the voice agent worker is active (<code className="rounded bg-slate-100 px-1 text-sm">pnpm run agent:dev</code> or <code className="rounded bg-slate-100 px-1 text-sm">npm run agent:dev</code> in the backend folder); otherwise the room will have no agent and you won’t hear a response.
       </p>
 
       {error && (
