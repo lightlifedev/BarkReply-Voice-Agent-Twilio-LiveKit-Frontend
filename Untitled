@@ -1,0 +1,6 @@
+
+  63 |       try {
+> 64 |         const response = await fetch(
+     |                                ^
+  65 |           `${backendUrl}/token?room=${encodeURIComponent(roomName)}&user=${encodeURIComponent(userName)}`
+  66 |         );
