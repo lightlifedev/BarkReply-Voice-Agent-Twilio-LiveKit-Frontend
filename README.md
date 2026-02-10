@@ -35,7 +35,7 @@ You can try out a demo of the playground with [KITT](https://kitt.livekit.io) or
 pnpm install
 ```
 
-2. Create a `.env.local` file in the frontend directory and set the backend URL:
+2. Create a `.env` file in the frontend directory and set the backend URL:
 
 ```
 NEXT_PUBLIC_BACKEND_URL=http://localhost:8080
